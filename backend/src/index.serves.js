@@ -1,7 +1,6 @@
 //gettinf express from the modules
 const express = require('express');
 const env = require('dotenv');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
@@ -10,6 +9,7 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin/auth');
 const buddiesRoutes = require('./routes/buddies/auth');
 const partnerRoutes = require('./routes/partner/auth');
+const categoryRoutes = require('./routes/category');
 
 //creating an app out of express
 const app = express();
@@ -30,11 +30,12 @@ mongoose.connect(
         console.log('Database Connected');
     });
 
-app.use(bodyParser());
+app.use(express.json());
 app.use('/api',authRoutes);
 app.use('/api',adminRoutes);
 app.use('/api',buddiesRoutes);
 app.use('/api',partnerRoutes);
+app.use('/api',categoryRoutes);
 
 
 
