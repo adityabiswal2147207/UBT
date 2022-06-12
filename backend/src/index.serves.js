@@ -10,6 +10,7 @@ const adminRoutes = require('./routes/admin/auth');
 const buddiesRoutes = require('./routes/buddies/auth');
 const partnerRoutes = require('./routes/partner/auth');
 const categoryRoutes = require('./routes/category');
+const productRoutes = require('./routes/product');
 
 //creating an app out of express
 const app = express();
@@ -36,6 +37,7 @@ app.use('/api',adminRoutes);
 app.use('/api',buddiesRoutes);
 app.use('/api',partnerRoutes);
 app.use('/api',categoryRoutes);
+app.use('/api',productRoutes);
 
 
 
