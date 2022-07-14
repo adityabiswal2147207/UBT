@@ -13,7 +13,7 @@ exports.createProduct = (req,res)=>{
 
     const product = new Product ({
         name:name,
-        slug: slugify(name),
+        slug: slug(name),
         price,
         quantity,
         description,
